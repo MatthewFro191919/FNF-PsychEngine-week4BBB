@@ -47,7 +47,7 @@ class HealthIcon extends FlxSprite
 				antialiasing = ClientPrefs.data.antialiasing;
 
 			
-			if(kadecharacters.contains(PlayState.dad.curCharacter.toLowerCase()))
+			if(kadecharacters.contains(PlayState.dad.curCharacter.toLowerCase())) {
 		
 				loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
@@ -87,9 +87,9 @@ class HealthIcon extends FlxSprite
 				animation.add('glassgoblin', [60, 61], 0, false, isPlayer);
 				animation.add('glassbaby', [62, 63], 0, false, isPlayer);
 				animation.play(char);
-	        	}
+			}
 			
-			if(kadecharacters.contains(PlayState.boyfriend.curCharacter.toLowerCase()))
+			if(kadecharacters.contains(PlayState.boyfriend.curCharacter.toLowerCase())) {
 		
 				loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
@@ -129,7 +129,7 @@ class HealthIcon extends FlxSprite
 				animation.add('glassgoblin', [60, 61], 0, false, isPlayer);
 				animation.add('glassbaby', [62, 63], 0, false, isPlayer);
 				animation.play(char);
-	        	}
+			}
 		}
 	}
 
