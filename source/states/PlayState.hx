@@ -403,7 +403,7 @@ class PlayState extends MusicBeatState
 
 		if (!stageData.hide_girlfriend)
 		{
-	            if(kadecharacters.contains(dad.curCharacter.toLowerCase())
+	            if(kadecharacters.contains(gf.curCharacter.toLowerCase()))
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
 			gf = new CharacterOld(0, 0, SONG.gfVersion);
 			startCharacterPos(gf);
@@ -416,7 +416,7 @@ class PlayState extends MusicBeatState
 			gfGroup.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gf);
 		}
-	        if(kadecharacters.contains(dad.curCharacter.toLowerCase())
+	        if(kadecharacters.contains(dad.curCharacter.toLowerCase()))
 		dad = new CharacterOld(0, 0, SONG.player2);
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
@@ -425,7 +425,7 @@ class PlayState extends MusicBeatState
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
 
-	        if(kadecharacters.contains(boyfriend.curCharacter.toLowerCase())
+	        if(kadecharacters.contains(boyfriend.curCharacter.toLowerCase()))
 		boyfriend = new CharacterOld(0, 0, SONG.player1, true);
 		startCharacterPos(boyfriend);
 		boyfriendGroup.add(boyfriend);
