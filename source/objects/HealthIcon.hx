@@ -47,7 +47,7 @@ class HealthIcon extends FlxSprite
 				antialiasing = ClientPrefs.data.antialiasing;
 
 			
-			if(char != kadecharacters) {
+			if(char.contains(kadecharacters)) {
 		
 				loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
