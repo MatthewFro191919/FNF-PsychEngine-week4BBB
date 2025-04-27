@@ -51,7 +51,7 @@ class HealthIcon extends FlxSprite
 			
 			if(kadecharacters.contains(PlayState.dad.curCharacter.toLowerCase())) {
 		
-				loadGraphic(Paths.image('iconGrid'), true, 150, 150);
+				loadGraphic(Paths.image('old-icons/iconGrid'), true, 150, 150);
 
 				antialiasing = true;
 				animation.add('bf', [0, 1], 0, false, isPlayer);
