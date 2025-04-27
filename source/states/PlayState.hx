@@ -151,9 +151,9 @@ class PlayState extends MusicBeatState
 	public var vocals:FlxSound;
 	public var opponentVocals:FlxSound;
 
-	public static var dad:Character = null;
-        public static var gf:Character = null;
-	public static var boyfriend:Character = null;
+	public var dad:Character = null;
+        public var gf:Character = null;
+	public var boyfriend:Character = null;
 
 	public var notes:FlxTypedGroup<Note>;
 	public var unspawnNotes:Array<Note> = [];
