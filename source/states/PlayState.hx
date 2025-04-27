@@ -414,14 +414,14 @@ class PlayState extends MusicBeatState
 			gfGroup.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gfold);
 			gfold = gf
-		    }
-		    else {
+		}
+		else {
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
 			gf = new Character(0, 0, SONG.gfVersion);
 			startCharacterPos(gf);
 			gfGroup.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gf);
-		    }
+	        }
 		}
 	        if(kadecharacters.contains(dad.curCharacter.toLowerCase())) {
 		dadold = new CharacterOld(0, 0, SONG.player2);
