@@ -407,6 +407,168 @@ class PlayState extends MusicBeatState
 			gfGroup.scrollFactor.set(0.95, 0.95);
 			gfGroup.add(gf);
 	        }
+		switch (SONG.gfVersion)
+		{
+			case 'gf-car':
+				gfVersion = 'gf-car';
+			case 'gf-christmas':
+				gfVersion = 'gf-christmas';
+			case 'gf-pixel':
+				gfVersion = 'gf-pixel';
+			case 'gf-goblin':
+				gfVersion = 'gf-goblin';
+			case 'baby-bopper':
+				gfVersion = 'baby-bopper';
+			default:
+				gfVersion = 'gf';
+		}
+
+		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
+
+		switch (SONG.player2)
+		{
+			case 'gf':
+				dad.setPosition(gf.x, gf.y);
+				gf.visible = false;
+				if (isStoryMode)
+				{
+					camPos.x += 600;
+					tweenCamIn();
+				}
+
+			case "spooky":
+				dad.y += 200;
+			case "monster":
+				dad.y += 100;
+			case 'monster-christmas':
+				dad.y += 130;
+			case 'dad':
+				camPos.x += 400;
+			case 'pico':
+				camPos.x += 600;
+				dad.y += 300;
+			case 'parents-christmas':
+				dad.x -= 500;
+			case 'senpai':
+				dad.x += 150;
+				dad.y += 360;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'senpai-angry':
+				dad.x += 150;
+				dad.y += 360;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'spirit':
+				dad.x -= 150;
+				dad.y += 100;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'baby':
+				camPos.x += 600;
+				camPos.y += 300;
+				dad.y += 440;
+				dad.x += 120;
+			case 'miku':
+				dad.y += 100;
+			case 'tinky':
+				dad.y += 100;
+				dad.x += 120;
+			case 'pewdiepie':
+				dad.y += 300;
+				dad.x += 120;
+			case 'freddy':
+				dad.y += 150;
+				dad.x += 120;
+			case 'scout':
+				dad.y += 150;
+				dad.x -= 120;
+			case 'homer':
+				camPos.x -= 600;
+				dad.y += 150;
+				dad.x -= 150;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'running-goblin':
+				dad.y += 430;
+				dad.x += 110;
+			case 'evil-baby':
+				dad.y += 350;
+				dad.x += 125;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y - 300);
+			case 'gametoons':
+				dad.y += 370;
+				dad.x += 200;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'alien':
+				dad.y += 230;
+				dad.x += 0;
+			case 'bob':	
+				dad.y += 290;
+			case 'bob-ron':	
+				dad.y += 290;
+			case 'ron':
+				dad.y += 268;
+				dad.x -= 27;
+			case 'bobcreature':
+				dad.y += 278;
+				dad.x -= 70;
+			case 'happy-baby':
+				dad.y += 440;
+				dad.x += 120;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y - 50);
+			case 'kitty':
+				dad.y += 440;
+				dad.x += 120;
+			case 'myth':
+				dad.y -= 75;
+				dad.x += 200;
+			case 'window-watcher':
+				//erm
+				dad.x += 75;
+				dad.y += 280;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y + 40);
+				FlxTween.tween(dad, {x: 260}, 2, {type: FlxTweenType.PINGPONG, ease: FlxEase.sineInOut});
+				FlxTween.tween(dad, {y: 180}, 6, {type: FlxTweenType.PINGPONG, ease: FlxEase.sineInOut});
+		}
+		// REPOSITIONING PER STAGE
+		switch (curStage)
+		{
+			case 'street':
+				boyfriend.x += 240;
+				dad.x += 160;
+				dad.y += 17;
+			case 'dream':
+				dad.y -= 37;
+				dad.x -= 80;
+				boyfriend.y -= 37;
+				boyfriend.x -= 3;
+			case 'hospital':
+				boyfriend.x += 240;
+				gf.y += 350;
+				gf.x += 300;
+				dad.x += 100;
+			case 'bathroom':
+				boyfriend.x += 1000;
+				dad.x += 0; //who did this FUCK YOU.
+				dad.x -= 0;
+				dad.y += 500;
+			case 'limo':
+				boyfriend.y -= 220;
+				boyfriend.x += 700;
+			case 'mall':
+				boyfriend.x += 200;
+			case 'mallEvil':
+				boyfriend.x += 320;
+				dad.y -= 80;
+			case 'school':
+				boyfriend.x += 200;
+				boyfriend.y += 220;
+				gf.x += 180;
+				gf.y += 300;
+			case 'schoolEvil':
+				boyfriend.x += 200;
+				boyfriend.y += 220;
+				gf.x += 180;
+				gf.y += 300;
+		}
+
 		dad = new Character(0, 0, SONG.player2);
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
