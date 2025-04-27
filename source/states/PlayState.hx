@@ -151,9 +151,13 @@ class PlayState extends MusicBeatState
 	public var vocals:FlxSound;
 	public var opponentVocals:FlxSound;
 
-	public var dad:Character = null;
-	public var gf:Character = null;
-	public var boyfriend:Character = null;
+	public static var dad:Character = null;
+        public static var gf:Character = null;
+	public static var boyfriend:Character = null;
+
+	public static var dadold:Character = null;
+        public static var gfold:Character = null;
+	public static var boyfriendold:Character = null;
 
 	public var notes:FlxTypedGroup<Note>;
 	public var unspawnNotes:Array<Note> = [];
@@ -405,10 +409,11 @@ class PlayState extends MusicBeatState
 		{
 	            if(kadecharacters.contains(gf.curCharacter.toLowerCase())) {
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
-			gf = new CharacterOld(0, 0, SONG.gfVersion);
-			startCharacterPos(gf);
+			gfold = new CharacterOld(0, 0, SONG.gfVersion);
+			startCharacterPos(gfold);
 			gfGroup.scrollFactor.set(0.95, 0.95);
-			gfGroup.add(gf);
+			gfGroup.add(gfold);
+			gfold = gf
 		    }
 		    else {
 			if(SONG.gfVersion == null || SONG.gfVersion.length < 1) SONG.gfVersion = 'gf'; //Fix for the Chart Editor
@@ -419,9 +424,10 @@ class PlayState extends MusicBeatState
 		    }
 		}
 	        if(kadecharacters.contains(dad.curCharacter.toLowerCase())) {
-		dad = new CharacterOld(0, 0, SONG.player2);
-		startCharacterPos(dad, true);
-		dadGroup.add(dad);
+		dadold = new CharacterOld(0, 0, SONG.player2);
+		startCharacterPos(dadold, true);
+		dadGroup.add(dadold);
+		dadold = dad
 		}
                 else {
 		dad = new Character(0, 0, SONG.player2);
@@ -429,9 +435,10 @@ class PlayState extends MusicBeatState
 		dadGroup.add(dad);
 		}
 	        if(kadecharacters.contains(boyfriend.curCharacter.toLowerCase())) {
-		boyfriend = new CharacterOld(0, 0, SONG.player1, true);
-		startCharacterPos(boyfriend);
-		boyfriendGroup.add(boyfriend);
+		boyfriendold = new CharacterOld(0, 0, SONG.player1, true);
+		startCharacterPos(boyfriendold);
+		boyfriendGroup.add(boyfriendold);
+		boyfriendold = boyfriend
 		}
 		else {
 		boyfriend = new Character(0, 0, SONG.player1, true);
