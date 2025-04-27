@@ -1,5 +1,7 @@
 package objects;
 
+import states.PlayState;
+
 class HealthIcon extends FlxSprite
 {
 	public var sprTracker:FlxSprite;
