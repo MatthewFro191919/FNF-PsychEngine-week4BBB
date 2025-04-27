@@ -135,6 +135,7 @@ class HealthIcon extends FlxSprite
 				animation.add('glassgoblin', [60, 61], 0, false, isPlayer);
 				animation.add('glassbaby', [62, 63], 0, false, isPlayer);
 				animation.play(char);
+			}
 			
 			if(kadecharacters.contains(boyfriend.curCharacter.toLowerCase())) {
 		
