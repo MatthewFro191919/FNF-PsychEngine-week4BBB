@@ -17,7 +17,6 @@ class HealthIcon extends FlxSprite
 	{
 		super();
 		this.isPlayer = isPlayer;
-		changeIcon(char, allowGPU);
 		scrollFactor.set();
 	}
 
