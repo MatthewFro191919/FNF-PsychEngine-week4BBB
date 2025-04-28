@@ -529,7 +529,7 @@ class FreeplayState extends MusicBeatState
 
 		for (num => item in grpSongs.members)
 		{
-			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+                        var icon:HealthIcon = iconArray[num]
 			item.alpha = 0.6;
 			icon.alpha = 0.6;
 			if (item.targetY == curSelected)
