@@ -73,7 +73,7 @@ class HealthIcon extends FlxSprite
 		}
 	}
 
-	public var autoAdjustOffset:Bool = true;
+	var autoAdjustOffset:Bool = true;
 	override function updateHitbox()
 	{
 		super.updateHitbox();
